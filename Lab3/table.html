@@ -1,0 +1,143 @@
+<html>
+    <head>
+    </head>
+    <script src="script.js"></script>
+     <link rel="stylesheet" type="text/css" href="style.css">
+<body>
+  <img src="http://www.thphys.nuim.ie/staff/joost/PI/images/nuimlogo.png">
+  <table id="table">
+  <tr>
+    <th class="headers">Name</th>
+    <th class="headers">ID</th>
+    <th class="headers">Assignment 1</th>
+    <th class="headers">Assignment 2</th>
+    <th class="headers">Assignment 3</th>
+    <th class="headers">Assignment 4</th>
+    <th class="headers">Assignment 5</th>
+    <th class="headers">Final Grade</th>
+    </tr>
+    
+  <!-- Use oninput to automatically update averages whenever a table cell is updated -->
+    <tr>
+    <td class="tdStudent" contenteditable="false">Goku</td>
+    <td class="tdStudent"  contenteditable="false">15741285</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades finalGrades" contenteditable="false">-</td>
+    </tr>
+    
+     <tr>
+    <td class="tdStudent" contenteditable="false">Yamcha</td>
+    <td class="tdStudent"  contenteditable="false">15748958</td>
+   <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades"contenteditable="false"></td>
+    </tr>
+  
+   <tr>
+    <td class="tdStudent" contenteditable="false">Krillin</td>
+    <td class="tdStudent"  contenteditable="false">15743322</td>
+   <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades"contenteditable="false"></td>
+    </tr>
+  
+  <tr>
+    <td class="tdStudent" contenteditable="false">Picollo</td>
+    <td class="tdStudent"  contenteditable="false">15748879</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades"contenteditable="false"></td>
+    </tr>
+  
+  <tr>
+    <td class="tdStudent" contenteditable="false">Gohan</td>
+    <td class="tdStudent"  contenteditable="false">16244591</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades"contenteditable="false"></td>
+    </tr>
+  
+  <tr>
+    <td class="tdStudent" contenteditable="false">Freiza</td>
+    <td class="tdStudent"  contenteditable="false">15546231</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades"contenteditable="false"></td>
+    </tr>
+  
+  <tr>
+    <td class="tdStudent" contenteditable="false">Majin Bu</td>
+    <td class="tdStudent"  contenteditable="false">15755412</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades"contenteditable="false"></td>
+    </tr>
+  
+  <tr>
+    <td class="tdStudent" contenteditable="false">Vegeta</td>
+    <td class="tdStudent"  contenteditable="false">14744658</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades"contenteditable="false"></td>
+    </tr>
+  
+  <tr>
+    <td class="tdStudent" contenteditable="false">Bulma</td>
+    <td class="tdStudent"  contenteditable="false">15744568</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades"contenteditable="false"></td>
+    </tr>
+  
+  <tr>
+    <td class="tdStudent" contenteditable="false">Trunks</td>
+    <td class="tdStudent"  contenteditable="false">14985562</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades" contenteditable="true" oninput="calculate()">-</td>
+    <td class="tdGrades"contenteditable="false"></td>
+    </tr>
+    
+</table>
+
+<table id="bottom">
+   <tr>
+    <td class="bottomBtn" contenteditable="false"><button onclick="calculate()">Calculate Final Grades</button></td>
+    <td class="bottomBtn"  contenteditable="false"><button onclick="download_csv()">Download CSV</button> </td>
+    <td class="bottomBtn" contenteditable="false"><button id="unsub">
+</button></td>
+  </tr>
+</table>
+  </body>
+    
+</html>

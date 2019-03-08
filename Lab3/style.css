@@ -1,0 +1,104 @@
+body
+{
+  padding: 5% 10% 5% 10%;
+}
+#table 
+{
+  
+  border-collapse:collapse;
+  border-spacing:0;
+  width: 100%;
+}
+
+#table td
+{
+  font-family: sans-serif;
+  font-size:14px;
+  padding:10px 5px;
+  border-style:solid;
+  border-width:1px;
+  overflow:hidden;
+  word-break:normal;
+  border-color:black;
+}
+
+#table th
+{
+  font-family: sans-serif;
+  font-size:14px;
+  font-weight:normal;
+  padding:10px 5px;
+  border-style:solid;
+  border-width:1px;
+  overflow:hidden;
+  word-break:normal;
+  border-color:black;
+}
+
+.headers 
+{
+   text-align: center;
+  vertical-align: top;
+  background-color: #4286f4;
+  color: white;
+  width: 10%;
+}
+
+.tdStudent 
+{
+  text-align: left;
+  background-color: white;
+  color: black;
+}
+.tdGrades 
+{
+  text-align: right;
+}
+button
+{
+  background-color: #6c95d8;
+  color: white;
+  border-radius: 4px;
+  100%;
+}
+
+.fail 
+{
+  background-color: red;
+  color: white;
+  text-align: right;
+}
+.pass 
+{
+  background-color: white;
+  color: black;
+  text-align: right;
+}
+.unsubmitted 
+{
+  background-color: yellow;
+  color: black;
+  text-align: right;
+}
+#unsub 
+{
+ background-color: #6c95d8;
+  color: white;
+  border-radius: 4px;
+}
+#bottom 
+{
+  width: 100%;
+}
+#bottom td
+{
+  font-family: sans-serif;
+  font-size:14px;
+  font-weight:normal;
+  padding:10px 5px;
+  border-style:solid;
+  border-width:1px;
+  overflow:hidden;
+  word-break:normal;
+  border-color:black;
+}
