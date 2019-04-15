@@ -1,0 +1,151 @@
+
+<head>
+<title>Hirigana-Test</title>
+
+ <script src="hirigana.js"></script> 
+ <link rel="stylesheet" type="text/css" href="hirigana.css">
+
+</head>
+
+<body>
+
+<h1>Hirigana Test</h1>
+
+<button type="button" id="test" onClick="test()">Test</button>
+
+<!--   quiz is hidden from user at launch until quiz button is pressed     -->
+
+<h3 id="h3">Select a group of cards you wish to be tested on</h3>
+
+<div id="quiz" class="hidden"></div>
+
+<table id="table">
+
+<tr>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_A.svg" id="a" class='img' onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)" onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_A.svg'">a</td>
+
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_I.png" id="i" class='img'onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_I.png'">i</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_U.png" id="u" class='img'onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_U.png'">u</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_E.png" id="e" class='img'onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_E.png'">e</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_O.png" id="o" class='img'onClick="playAudio(this.id)" 
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_O.png'">o</td>
+</tr>
+<tr>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_KA.svg" id="ka" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_KA.svg'">ka</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_KI.svg" id="ki" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_KI.svg'">ki</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_KU.svg" id="ku" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_KU.svg'">ku</td>
+      	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_KE.png" id="ke" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_KE.png'">ke</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_KO.png" id="ko" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_KO.png'">ko</td>
+         </tr>
+
+         <tr>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_SA.svg" id="sa" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_SA.svg'">sa</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_SI.svg" id="shi" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_SI.svg'">shi</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_SU.svg" id="su" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_SU.svg'">su</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_SE.svg" id="se" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_SE.svg'">se</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_SO.svg" id="so" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_SO.svg'">so</td>
+</tr>
+<tr>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_TA.png" id="ta" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_TA.png'">ta</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_TI.png" id="chi" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_TI.png'">chi</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_TU.png" id="tsu" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_TU.png'">tsu</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_TE.png" id="te" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_TE.png'">te</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_TO.png" id="to" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_TO.png'">to</td>
+         </tr>
+
+	<tr>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_NA.png"  id="na" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_NA.png'">na</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_NI.png" id="ni" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_NI.png'">ni</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_NU.png" id="nu" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_NU.png'">nu</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_NE.png" id="ne" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_NE.png'">ne</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_NO.png" id="no" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_NO.png'">no</td>
+</tr>
+<tr>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_HA.png" id="ha" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_HA.png'">ha</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_HI.png.png" id="hi" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_HI.png.png'">hi</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_HU.png" id="fu" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_HU.png'">fu</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_HE.png" id="he" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_HE.png'">he</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_HO.png" id="ho" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_HO.png'">ho</td>
+         </tr>
+
+	<tr>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_MA.svg" id="ma" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_MA.svg'">ma</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_MI.png" id="mi" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_MI.png'">mi</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_MU.png" id="mu" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_MU.png'">mu</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_ME.png" id="me" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_ME.png'">me</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_MO.png" id="mo" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_MO.png'">mo</td>
+</tr>
+<tr>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_YA.png" id="ya" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_YA.png'">ya</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_YU.png" id="yu" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_YU.png'">yu</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_YO.png" id="yo" onClick="playAudio(this.id)"onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_YO.png'">yo</td>
+         </tr>
+
+	<tr>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_RA.png" id="ra" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_RA.png'">ra</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_RI.png" id="ri" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_RI.png'">ri</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_RU.png" id="ru" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_RU.png'">ru</td>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_RE.png" id="re" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_RE.png'">re</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_RO.png" id="ro" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_RO.png'">ro</td>
+            </tr>
+<tr>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_WA.png" id="wa" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_WA.png'">wa</td>
+	    <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_WO.png" id="wo" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_WO.png'">wo</td>
+         </tr>
+
+         <tr>
+            <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_N.png" id="n" onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)"
+		onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_N.png'">n</td>
+         </tr>
+
+      </table>
+
+
+<div style="text-align:center;"><p>Hirigana images are available to download at <a target="_blank" href="https://commons.wikimedia.org/wiki/Hiragana">commons.wikimedia.org</a><p>
+<p>Hirigana audio and lessons are available to download at <a target="_blank" href='http://www.guidetojapanese.org/learn/complete/hiragana'>GuidetoJapanese.org</a></p></div>
+
+</body>
+
