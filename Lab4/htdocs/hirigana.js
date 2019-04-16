@@ -48,6 +48,8 @@ const test_data = {
 }
 
 const values = Object.values(test_data);
+const keys = Object.keys(test_data);
+
 // function to play audio by div id
 function playAudio(id) {
 	var path = new Audio("Hirigana.audio/"+id+".ogg");
@@ -84,6 +86,8 @@ function selected(id) {
 		console.log(id+" has been added to cards!")
 			console.log(cards);
 	}
+	if( cards.length == 10 ) {
+	test();
 }
 
 // fucntion to test user on selected cards 
@@ -105,38 +109,80 @@ function test() {
 	}
 }
 
+// fucntion to test user on selected cards 
+function test() {
+	
+	var quiz = document.getElementById('quiz');
+
+		// remove table from page and load up quiz
+		hideTable();
+
+		// load quiz
+		document.getElementById('quiz').className='shown';
+
+		// check which type of quiz the user wants 
+		testType();
+}
+function testType() {
+	var newDiv = document.createElement('div');
+	newDiv.setAttribute('id','test_type');
+	newDiv.setAttribute('class','content');
+	newDiv.innerHTML = 'Would you like to be tested on kana elements or ramji?';
+	document.getElementById('quiz').appendChild(newDiv);
+	
+	var kanaDiv = document.createElement('div');
+	kanaDiv.innerHTML = 'Kana';
+	kanaDiv.setAttribute('class','content');
+	var kana = createRadioElement('radio', 'test_choice', 'kana_elements', 'kanaQuiz()' );
+	kanaDiv.appendChild( kana );
+	newDiv.appendChild( kanaDiv );
+
+	var romajiDiv = document.createElement('div');
+	romajiDiv.innerHTML = 'Romaji';
+	romajiDiv.setAttribute('class','content');
+	var romaji = createRadioElement('radio', 'test_choice', 'romaji_elements', 'romajiQuiz()' );
+	romajiDiv.appendChild( romaji );
+	newDiv.appendChild( romajiDiv );
+}
+
+function remove_test_type_div() {
+	var test = document.getElementById('test_type');
+	test.parentElement.removeChild(test);
+}
 // tableCreate() found @ https://stackoverflow.com/questions/14643617/create-table-using-javascript
 // and reconstructed for hirigan app 
-function tableCreate() {
-  	var body = document.getElementById('quiz');
-  	var tbl = document.createElement('table');
+// kanaQuiz function will build a table and populate it with
+// selected cards and random cards, each with radio buttons
+// to keep track of the players score 
+
+function kanaQuiz() {
+	
+	remove_test_type_div();
+	
+	var tbl = document.createElement('table');
   	tbl.setAttribute('class', 'table');
 	tbl.setAttribute('id', 'quizTable');
   	var tbdy = document.createElement('tbody');
    	
 	for( var i = 0; i < cards.length; i++) {
-
+		var body = document.getElementById('quiz');
 		var tr = document.createElement('tr');
 		var randomNum = parseInt(Math.floor(Math.random() * 4) );
 		var inserted = false;
 		
     		for (var j = 0; j < 5; j++) {
-
 			var td = document.createElement('td');
-
 			// Upload question at the start of each row
 			if( j === 0 ) {
 				td.innerHTML = 'Which character represents '+cards[i]+ '?';
 				tr.appendChild(td);
 			}else{
-
 				var randomValue = values[parseInt(Math.random() * values.length) ];
 				var newImg = document.createElement('img');
-
 				// Fill the table first with 1 selected character and then with 3 random characters
 				if( randomNum === parseInt(0) && !inserted ) {
 					newImg.src = test_data[cards[i]];
-					console.log(cards[i] + ' does it match ' + test_data[cards[i] ].key);
+					console.log(cards[i] + ' does it match ' + keys[i]);
 					td.appendChild(newImg);
 
 					td.appendChild( createRadioElement( 'radio', 'row'+i, cards[i]+'_correct', null ) );
@@ -160,9 +206,60 @@ function tableCreate() {
   	body.appendChild(tbl);
 	body.appendChild( createRadioElement('submit', 'submitBtn', 'submitBtn', 'checkAnswers()') );
 console.log('quiz has been loaded');
-
 }
+function romajiQuiz() {
 
+	remove_test_type_div();
+
+	var tbl = document.createElement('table');
+  	tbl.setAttribute('class', 'table');
+	tbl.setAttribute('id', 'quizTable');
+  	var tbdy = document.createElement('tbody');
+   	
+	for( var i = 0; i < cards.length; i++) {
+		var body = document.getElementById('quiz');
+		var tr = document.createElement('tr');
+		var randomNum = parseInt(Math.floor(Math.random() * 4) );
+		var inserted = false;
+		
+    		for (var j = 0; j < 5; j++) {
+			var td = document.createElement('td');
+			// Upload card at the start of each row
+			if( j === 0 ) {
+				var newImg = document.createElement('img');
+				newImg.src = test_data[cards[i]];
+				td.appendChild(newImg);
+				tr.appendChild(td);
+			}else{
+				var randomValue = keys[parseInt(Math.random() * values.length) ];
+				var newRomaji = document.createElement('div');
+				// Fill the table first with 1 selected character and then with 3 random characters
+				if( randomNum === parseInt(0) && !inserted ) {
+					newRomaji.innerHTML = cards[i];
+					td.appendChild(newRomaji);
+
+					td.appendChild( createRadioElement( 'radio', 'row'+i, cards[i]+'_correct', null ) );
+        				tr.appendChild(td);
+					console.log(test_data[cards[i] ]+" selected card has been loaded into the quiz");
+					randomNum = parseInt(Math.floor(Math.random() * 4) );
+					inserted = true;
+				}else{
+					newRomaji.innerHTML = randomValue;
+					td.appendChild(newRomaji);
+					td.appendChild( createRadioElement('radio', 'row'+i, cards[i]+'_incorrect'+(j*i), null ) );
+					td.classList.add('quizQuestions');
+        				tr.appendChild(td);
+					randomNum--;
+				}
+			}
+      		}
+    		tbdy.appendChild(tr);
+	}
+  	tbl.appendChild(tbdy);
+  	body.appendChild(tbl);
+	body.appendChild( createRadioElement('submit', 'submitBtn', 'submitBtn', 'checkAnswers()') );
+console.log('quiz has been loaded');
+}
 // createRadioElement() found @ https://stackoverflow.com/questions/118693/how-do-you-dynamically-create-a-radio-button-in-javascript-that-works-in-all-bro
 // and reconstructed for hirigan app 
 function createRadioElement(type, name, id, onClick) {
@@ -185,14 +282,15 @@ function checkAnswers() {
 	var samurai = document.createElement('img');
 	samurai.setAttribute('src', 'img/Hiragana.gif/samurai.gif');
 
-	// remove quiz table and load samurai
+	// remove quiz table
 	var quizTable = document.getElementById('quizTable');
 	quizTable.parentNode.removeChild(quizTable);
 	var quiz = document.getElementById('quiz');
-	quiz.appendChild(samurai);
 	var btn = document.getElementById('submitBtn');
 	btn.parentNode.removeChild(btn);
 	window.alert('Congratulations, your score is '+score );
+
+	resetPage();
 }
 // If correct card has been checked then the score will be updated
 function check(card) {
@@ -200,3 +298,27 @@ function check(card) {
 		score++;
 	}
 }
+function resetPage() {	
+	score = 0;
+	
+console.log(cards);
+	// unselect all selected cards
+	for(var i = cards.length-1; i >= 0; i--) {
+		selected(cards[i] );
+	}
+	showTable();
+}
+
+function showTable() {
+	document.getElementById('table').style.display = "block";
+	document.getElementById('table').setAttribute('class', 'table');
+	document.getElementById('table').setAttribute('display', '');
+	document.getElementById('h3').style.display = "block";
+	document.getElementById('test').style.display = "block";
+}
+
+function hideTable() {
+	document.getElementById('table').style.display = "none";
+	document.getElementById('h3').style.display = "none";
+}
+	
