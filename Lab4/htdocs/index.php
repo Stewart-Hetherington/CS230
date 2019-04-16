@@ -1,25 +1,60 @@
+<!-- all php code found @ https://codewithawa.com/posts/complete-user-registration-system-using-php-and-mysql-database -->
+
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
+
+<!DOCTYPE html>
 
 <head>
 <title>Hirigana-Test</title>
 
- <script src="https://raw.githubusercontent.com/Stewart-Hetherington/CS230/master/Lab4/htdocs/hirigana.js"></script> 
- <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/Stewart-Hetherington/CS230/master/Lab4/htdocs/hirigana.css">
+ <script src="hirigana.js"></script> 
+ <link rel="stylesheet" type="text/css" href="hirigana.css">
 
 </head>
 
 <body>
 
-<h1>Hirigana Test</h1>
-
-<button type="button" id="test" onClick="test()">Test</button>
+<h1>Hirigana Tutor</h1>
 
 <!--   quiz is hidden from user at launch until quiz button is pressed     -->
 
-<h3 id="h3">Select a group of cards you wish to be tested on</h3>
+<div id='login' class="content">
+  	<!-- notification message -->
+  	<?php if (isset($_SESSION['success'])) : ?>
+      <div class="error success" >
+      	<h3>
+          <?php 
+          	echo $_SESSION['success']; 
+          	unset($_SESSION['success']);
+          ?>
+      	</h3>
+      </div>
+  	<?php endif ?>
+
+    <!-- logged in user information -->
+    <?php  if (isset($_SESSION['username'])) : ?>
+    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+    	<a href="index.php?logout='1'" style="color: red;">logout</a>
+    <?php endif ?>
+</div>
+
+<h3 id="h3">Select a group of 10 cards to be examined on</h3>
 
 <div id="quiz" class="hidden"></div>
 
-<table id="table">
+<table id='table'>
 
 <tr>
             <td><img src="img/Hirigana.img/Japanese_Hiragana_kyokashotai_A.svg" id="a" class='img' onClick="playAudio(this.id)" onmouseover="showGif(this, this.id)" onmouseout="this.src='img/Hirigana.img/Japanese_Hiragana_kyokashotai_A.svg'">a</td>
@@ -148,4 +183,3 @@
 <p>Hirigana audio and lessons are available to download at <a target="_blank" href='http://www.guidetojapanese.org/learn/complete/hiragana'>GuidetoJapanese.org</a></p></div>
 
 </body>
-
